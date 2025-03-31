@@ -10,4 +10,5 @@ export interface ValidationSchemas {
 
 export interface AuthenticatedRequest extends Request {
   user?: string | JwtPayload;
+  cookies: { [key: string]: string };
 }
