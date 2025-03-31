@@ -30,7 +30,7 @@ const gadgets = pgTable('gadgets', {
   id: uuid().primaryKey(),
   name: text('name').notNull(),
   status: gadgetsStatusEnum('status').notNull(),
-  decommissioned_timestamp: timestamp()
+  decommissioned_timestamp: timestamp('decommissioned_timestamp')
 });
 
 export { users, gadgets, refreshTokens, signUpBodySchema };

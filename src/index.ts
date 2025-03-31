@@ -32,6 +32,4 @@ app.all('*', (req, res) => {
 // Error Handling Middleware
 app.use(handleErrors);
 
-export const server = app.listen(3000, () => {
-  console.log('Server is listening at PORT 3000');
-});
+app.listen(3000);
