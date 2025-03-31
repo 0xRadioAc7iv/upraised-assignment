@@ -7,16 +7,16 @@ import {
   updateGadgetController
 } from '../../../controllers/gadgetsControllers';
 
-const testRouter = Router();
+const gadgetsRouter = Router();
 
-testRouter.get('/', retrieveGadgetsController);
+gadgetsRouter.get('/', retrieveGadgetsController);
 
-testRouter.post('/:id/self-destruct', selfDestructGadgetController);
+gadgetsRouter.post('/:id/self-destruct', selfDestructGadgetController);
 
-testRouter.post('/', createNewGadgetController);
+gadgetsRouter.post('/', createNewGadgetController);
 
-testRouter.patch('/:id', updateGadgetController);
+gadgetsRouter.patch('/:id', updateGadgetController);
 
-testRouter.delete('/:id', deleteGadgetController);
+gadgetsRouter.delete('/:id', deleteGadgetController);
 
-export { testRouter };
+export { gadgetsRouter };

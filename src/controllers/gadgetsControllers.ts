@@ -92,7 +92,7 @@ const selfDestructGadgetController: RequestHandler = async (
 };
 
 const createNewGadgetController: RequestHandler = async (
-  request,
+  _request,
   response,
   next
 ) => {

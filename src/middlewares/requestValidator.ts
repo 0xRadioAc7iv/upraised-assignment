@@ -40,7 +40,8 @@ export const validateRequest = (schemas: ValidationSchemas) => {
     }
 
     if (Object.keys(validationErrors).length > 0) {
-      return res.status(400).json({ errors: validationErrors });
+      res.status(400).json({ errors: validationErrors });
+      return;
     }
 
     next();
