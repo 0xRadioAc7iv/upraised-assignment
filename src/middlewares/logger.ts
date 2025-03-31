@@ -1,6 +1,5 @@
-// loggingMiddleware.ts
-import { Request, Response, NextFunction } from "express";
-import logger from "../utils/logging";
+import { Request, Response, NextFunction } from 'express';
+import logger from '../utils/logging';
 
 export function loggingMiddleware(
   req: Request,
@@ -9,7 +8,7 @@ export function loggingMiddleware(
 ): void {
   const startHrTime = process.hrtime();
 
-  res.on("finish", () => {
+  res.on('finish', () => {
     const elapsedHrTime = process.hrtime(startHrTime);
     const elapsedTimeInMs = elapsedHrTime[0] * 1000 + elapsedHrTime[1] / 1e6;
 

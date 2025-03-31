@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from "express";
-import { ValidationResult } from "joi";
-import { ValidationSchemas } from "../lib/interfaces";
+import { Request, Response, NextFunction } from 'express';
+import { ValidationResult } from 'joi';
+import { ValidationSchemas } from '../lib/interfaces';
 
 export const validateRequest = (schemas: ValidationSchemas) => {
   return (req: Request, res: Response, next: NextFunction) => {
@@ -12,30 +12,30 @@ export const validateRequest = (schemas: ValidationSchemas) => {
       if (error) {
         validationErrors.body = error.details
           .map((err) => err.message)
-          .join(", ");
+          .join(', ');
       }
     }
 
     if (schemas.query) {
       const { error }: ValidationResult = schemas.query.validate(req.query, {
-        abortEarly: false,
+        abortEarly: false
       });
 
       if (error) {
         validationErrors.query = error.details
           .map((err) => err.message)
-          .join(", ");
+          .join(', ');
       }
     }
 
     if (schemas.params) {
       const { error }: ValidationResult = schemas.params.validate(req.params, {
-        abortEarly: false,
+        abortEarly: false
       });
       if (error) {
         validationErrors.params = error.details
           .map((err) => err.message)
-          .join(", ");
+          .join(', ');
       }
     }
 
