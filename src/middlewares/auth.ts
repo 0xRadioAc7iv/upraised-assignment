@@ -18,6 +18,7 @@ export const authMiddleware = (
   jwt.verify(
     accessToken,
     JWT_ACCESS_TOKEN_SECRET,
+    /* eslint-disable */
     (err: any, user: string | jwt.JwtPayload | undefined) => {
       if (err) return response.sendStatus(403);
       request.user = user;

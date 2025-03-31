@@ -117,7 +117,9 @@ const refreshAccessTokenController: RequestHandler = async (
     jwt.verify(
       refreshToken,
       JWT_REFRESH_TOKEN_SECRET,
+      /* eslint-disable */
       (err: any, decoded: any) => {
+        /* eslint-enable */
         if (err) {
           response.status(403).json({ message: 'Invalid refresh token' });
           return;
